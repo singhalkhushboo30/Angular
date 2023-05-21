@@ -1,0 +1,63 @@
+<h4>Interpolation - One Way Data Binding</h4>
+<div>
+    <p>{{FirstName + ' ' + LastName}}</p>
+</div>
+<!--
+<div>{{'FirstName:'+FirstName +','+'LastName:'+LastName}}\</div>
+<div> {{10+5-7+6}}</div>
+<div></div>{{'Salary:' + Salary*10}}</div>
+<div>Name:{{ name?name:'Name not found'}}</div>
+<div>{{GetFullName()}}</div>
+<div><img src={{ImagePath}}/></div>
+-->
+<hr/>
+<h4>Property Binding</h4>
+<div>
+    <span [innerHTML]='Title'></span>
+   <!-- <img [src]="ImagePath"/>-->
+   <!-- <img src="data:image/{{path}}"> -->
+   <button disabled = {{IsDisabledClick}}> Cick Here </button>  <!--always be disable whatever is the value.             -->
+</div>
+<hr/>
+<h4>Attribute Binding</h4>
+<thead>
+   <tr>
+    <th [attr.colspan]="ColumnSpan">{{pageHeader}}</th> <!-- <th attr.colspan="ColumnSpan">-->
+   </tr>   
+</thead>
+<hr/>
+<h4>Class Binding</h4>
+<div>
+    <button class='colorClass' [class] = 'ClassesToApply' >Click Me</button>
+    <!-- <button class='colorClass' [class.boldClass]='ApplyBoldClass'>Click Me</button>-->
+    <!-- <button class='colorClass' [class.boldClass]='!ApplyBoldClass'>Click Me</button>-->
+    <!-- <button class='colorClass' [ngClass]='AddCSSClasses()'>Click Me</button> -->
+</div>
+<hr/>
+<h4>Style Binding</h4>
+<div>
+    <button style="color:red">Click Me</button>
+    <button style="color:red" [style.font-weight]="IsBold?'bold':'light'">Click Me</button>
+    <button [ngStyle]="AddCSSStyles()">Click Me</button>
+    <button style='color:red' [style.font-size.px]="FontSize">Click Me</button>
+</div>
+<hr/>
+<div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Course</th>
+        </tr>
+        <tr *ngIf="showDetails">
+           <td>A</td>
+           <td>B</td>
+        </tr>
+    </table>
+    <button (click)="ToggleDetails()">{{showDetails?'Show':'Hide'}} Details</button>
+    <button (click)="OnClick()">Submit</button>
+    
+</div>
+<hr/>
+<h4>Two Way Data Binding</h4>
+<input  value="Name" [(ngModel)]="Name">
+<p>Name:{{Name}}</p>

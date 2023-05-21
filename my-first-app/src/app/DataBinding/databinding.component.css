@@ -1,0 +1,23 @@
+/* div{
+    border:2px solid red;
+    
+} */
+.italicClass{
+    font-style: italic;
+
+}
+.boldClass{
+    font-weight: bold;
+}
+.colorClass{
+    color:brown;
+}
+table{
+    border-collapse: collapse;
+}
+th{
+    border:1px solid black;
+}
+td{
+        border:1px solid black;
+}

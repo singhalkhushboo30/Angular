@@ -1,0 +1,26 @@
+h3{
+    text-align:left;
+    font-weight:lighter;
+
+}
+p{
+    text-align:left;
+    font-weight:lighter;
+    font-size:large;
+    
+}
+h2{
+    font-weight:lighter;
+    font-size:large;
+}
+.class1{
+    font-style: italic;
+    color: blueviolet;
+}
+.class2{
+    font-weight: bolder;
+
+}
+.class3{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

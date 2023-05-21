@@ -1,0 +1,22 @@
+<!-- ngIf Directive-->
+<h4 *ngIf="true">ngFor Directive- Structural Directive</h4>
+<h4 *ngIf="displayValue">ngFor Directive- Structural Directive</h4>
+<div *ngIf="isValid then thenblock else elseblock">
+</div>
+<ng-template #thenblock>
+    <i>This is then block.</i>
+</ng-template>
+<ng-template #elseblock>
+    <i>This is else block.</i>
+</ng-template>
+<hr/>
+<p><b>ngSwitch Directive- Structural Directive</b></p>
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">You picked red color.</div>
+    <div *ngSwitchCase="'yellow'">You picked red color.</div>
+    <div *ngSwitchCase="'green'">You picked red color.</div>
+    <div *ngSwitchCase="'blue'">You picked red color.</div>
+    <div *ngSwitchDefault>Pick again.</div>
+</div>
+
+

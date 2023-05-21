@@ -1,0 +1,14 @@
+table{
+    font-size:large;
+    font-family:Arial, Helvetica, sans-serif;
+    border-collapse:collapse;
+}
+th{
+   border:2px solid black;
+    color:blue;
+}
+td{
+    
+    border:2px solid black;
+    color:skyblue;
+}

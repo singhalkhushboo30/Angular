@@ -1,0 +1,256 @@
+                  ANGULAR- WHAT and WHY?
+				  
+-> Framework to build client side applications.
+-> Great for SPAs
+-> Modular approach(design approach)
+-> Reusable Code
+-> Development quicker and easier
+-> Unit testable
+-> Google + Microsoft
+
+                  ANGULAR'S HISTORY
+				  
+2010 - Angular JS
+2016 - Angular Version 2
+2016 Dec - Angular Verrsion 4
+2017 Nov - Angular Version 5
+2018 April - Angular Version 6
+2018 October - Angular Verison 7
+
+                  SEMANTIC VERSIONING
+				  
+Version 1.2.3
+1 -> Major Version (break in functionality)
+2 -> Minor Version (feature addition)
+3 -> Fix(Patch) (bug fixes)
+
+                     ARCHITECTURE
+					 
+					 Angular App
+	                      |
+						  Module
+						  /   \
+			       Component  Services
+				   / | \
+     Html Template + Class+ Metadata
+	 
+	 Metadata- Information Decorator(@ngModule)
+					 
+Angular is combination of basic modules.
+for example - User's module will contain user's data and Admin module contains admin application related data.Every angular app has one root module known as "app modules" and every modules contains components and services
+and every component controls a portion of the view on the browser but still every angular app will conatin atleast one component known as root component and other components will be nested inside the root component.
+       Root Component
+	        |
+component1			Component2      Component3
+
+Each component contains HTML template and Class
+HTML Template - It is responsible to represent the view in the browser 
+Class - It controls the logic of that particular view.
+
+Services - It conatins the business logic of the app.
+
+---------------------------------------
+Architecture Summary
+
+Angular App - one or more modules
+Module - one or more components and services
+Components - HTML+Class
+Services - Business Logic
+Modules interact and ultimately render the view in the browser.
+
+package.json - It conatins all the dev dependencies(libraries and modules) required for an angular app to work.   [ ng new hello-world(appliaction anme) ]
+All the packages are installed inside the "ng_modules" folder.
+
+scripts in package.json contains all the basic commands like ng serve , ng build etc.
+
+src folder - It contains the .ts file which is the entry point to the app.
+src -> app -> root module, root components...
+ 
+While we wite the ng serve command -> It takes it to the main.ts file  -> It takes it to the app.module -> It kickstarts component (conatins HTML Tempalte and class) -> The title in the app.component class renders it to the inner HTML
+
+View- HTML
+Class- Typescript
+
+app.component.ts -> It conatins component decorator(selectors + templateUrls + styleUrls)
+selectors - It is basically a custom HTML tag that can be used to represent this component(AppComponent).
+
+ng g c component-name
+(g- generator, ,c- component)
+ in app.module.ts - declarations contains all the component files
+ 
+ ---------------------------------
+Use the Ctrl+` keyboard shortcut to toggle the terminal panel.
+Use the Ctrl+Shift+` keyboard shortcut to create a new terminal.
+Use the View > Terminal or Terminal > New Terminal menu commands.
+From the Command Palette (Ctrl+Shift+P), use the View: Toggle Terminal command.
+-------------------------------------------
+
+Things need to know before Angular 14 :
+* Html,DOM(Document Object Nodel),CSS
+* JavaScript
+* OOPS
+* Typescript
+* No prior knowledge opf angular js,angular 2 .....are required
+
+Building blocks of Angular:
+* Modules
+* Components
+* Templates
+* Metadata
+* Data Binding 
+* Directives
+* Services
+* Dependency Injection
+
+Module- Angular Module is a class (contains it's own metadata)which is decorated with @NgModule.NgModule takes a single metadata object and it's properties describe the module.
+Properties of module:
+* exports
+* provides
+* bootstrap
+* declarations
+(If a angular has one module then it is "Root module" otherwise it has one "Root Module" with many more featured modules.
+@NgModule decoartor
+
+Components- Component is a class with the template that deals with the view of application and it is containing the core logic for the page.
+@Component decorator
+
+Template- It is the component view that tells angular how to display the component. It looks like normal HTML.
+
+Service- It is like a class that is used to reuse the code.
+
+Directives- used to extend the power of the HTML attributes and to change the appearance or behaviour of a DOM element.
+(Component Directives,Structural Directives,Attributes Directives)
+
+Dependency Injection- It is a software design pattern in which objects are passed as dependencies. It helps us to remove the hardcoded dependencies and makes dependencies configurable.Using dependency injection, we can make components maintainable,reusable and testable.
+
+Angular Routing- for page navigation
+
+------------------------------------------------------------------------------------------------------------------------
+
+package.json - this file contains all the dependencies needed in the project
+src folder - It is where our source code is kept
+
+Angular is, of course, not a tool to allow us to write static HTML files.
+We wouldn't need a framework for that. It allows us to mix static HTML code and dynamic things we want to output in that code.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Creating a component
+
+To create a component using the Angular CLI:
+
+From a terminal window, navigate to the directory containing your application.
+Run the ng generate component <component-name> command, where <component-name> is the name of your new component.
+By default, this command creates the following:
+
+A directory named after the component
+A component file, <component-name>.component.ts
+A template file, <component-name>.component.html
+A CSS file, <component-name>.component.css
+A testing specification file, <component-name>.component.spec.ts
+
+@Component({
+  selector: 'app-component-overview',
+  templateUrl: './component-overview.component.html',
+  styleUrls: ['./component-overview.component.css']
+})
+
+export class ComponentOverviewComponent {
+
+}  // includes code for component
+
+* Every component requires a CSS selector. A selector instructs Angular to instantiate this component wherever it finds the corresponding tag in template HTML. For example, consider a component hello-world.component.ts that defines its selector as app-hello-world
+*A template is a block of HTML that tells Angular how to render the component in your application. Define a template for your component in one of two ways: by referencing an external file, or directly within the component.
+If you want your template to span multiple lines, use backticks (`). For example:
+
+content_copy
+@Component({
+  selector: 'app-component-overview',
+  template: `
+    <h1>Hello World!</h1>
+    <p>This template definition spans multiple lines.</p>
+  `
+})
+* Declare component styles used for its template in one of two ways: By referencing an external file, or directly within the component.
+@Component({
+  selector: 'app-component-overview',
+  template: '<h1>Hello World!</h1>',
+  styles: ['h1 { font-weight: normal; }']
+})
+
+<base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+
+ -------------------------------------------------------------------------------------------------------------
+Interpolation - The syntax of using the expression of curly braces is known as "Interpolation".//to oputpot data in template
+Basically, Interpolation is used to bind data from the class to the template.
+
+Property Binding is needed because in most of the cases attributes have the boolean value and in that case interpolation doesn't work so property binding is needed.(like disabled attribute in input tag)
+
+Attributes                                   |       Properties
+
+Attributes and properties are not tyh same.
+Attributes- HTML
+Properties - DOM(Document Object Model)
+Attributes initialize DOM properties and then they are done. Attributes values can't change once tehy are initialized.
+Properties value however can change.
+
+import { Component, OnInit } from '@angular/core';
+@Component({
+  selector: 'app-test',
+  template: `<h3>
+  Welcome to the test component class.
+  </h3>
+  <!--Interpolation.-->
+  <p>
+    This is my {{value}}.</p> 
+  <h2>{{2+2}}  </h2>
+  <h2>{{"Welcome to this "+value +"."}}  </h2>   
+  <h2>{{"This "+ value.toUpperCase() + "is about Interpolation." }}  </h2>
+  <h2>{{greetUser()}}</h2>
+  <h2>{{siteURL}}</h2>
+  <input type="text" value="Vishwas" >
+  <!--<input [disabled]="isDisabled" id="{{myId}}" type="text" value="Singhal">-->
+  `,
+  styleUrls: [``]
+})
+
+//Property Binding 
+
+Property binding in Angular helps you set values for properties of HTML elements or directives.
+
+
+export class TestComponent implements OnInit {
+  public value="page";
+  public isDisabled="false";
+  public myId="testId";
+  public name="guys";
+  public siteURL=window.location.href;
+  //Angular is not aware of the js built-in functions/features so we have to first initialize them in the class and then render them to the template
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  greetUser(){
+    return "Hello " + this.name+ "!";
+  }
+
+}
+-----------------------------------------------------------------------------
+
+Event Binding
+
+                                    Template
+                                      *  |   
+             Data Binding            |  *    Event Binding
+                                    Class
+
+
+
+
+
+
+
+ 
